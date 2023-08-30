@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    <form action="/" method="post">
+        <input type="url" name="url" placeholder="Enter URL" required>
+        <input type="text" name="alias" placeholder="Custom alias (optional)">
+        <button type="submit">Shorten</button>
+    </form>
+</body>
+</html>
